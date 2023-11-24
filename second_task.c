@@ -1,44 +1,61 @@
 #include "main.h"
 #include <stdarg.h>
 
-int _printf(const char *format, ...) {
-	int count = 0; /* Variable pour suivre le nombre de caractères imprimés */
-	va_list args; /* Déclaration de la liste d'arguments variable */
-	va_start(args, format); /* Initialisation de la liste d'arguments variable avec le format */
+/**
+ * _printf - Simulates the printf function in C.
+ * @format: Format string.
+ *
+ * Return: The number of characters printed (excluding the null byte).
+ */
+int _printf(const char *format, ...)
+{
+	int count = 0; /* Variable to track the number of printed characters */
+	va_list args; /* Declaration of the variable argument list */
 
-	while (*format != '\0') {
-		/* Gestion des spécificateurs de conversion */
-		if (*format == 'd' || *format == 'i') {
-			/* Gérer %d et %i : entier signé */
+	va_start(args, format);
+		/* Initialization of the variable argument list with the format */
+
+	while (*format != '\0')
+	{
+		/* Handling conversion specifiers */
+		if (*format == 'd' || *format == 'i')
+		{
+			/* Handling %d and %i: signed integer */
 			int num = va_arg(args, int);
-			/* Utilisation de putchar pour imprimer un seul caractère à la fois */
-			putchar(num + '0'); /* Convertit l'entier en caractère et l'imprime */
+
+			putchar(num + '0'); /* Convert the integer to a character and print */
 			count++;
-		} else if (*format == 'c') {
-			/* Gérer %c : caractère */
-			char ch = va_arg(args, int); /* Va_arg pour un caractère doit retourner int */
-			/* Utilisation de putchar pour imprimer un seul caractère à la fois */
+		}
+		else if (*format == 'c')
+		{
+			/* Handling %c: character */
+			char ch = va_arg(args, int); /* Va_arg for a character should return int */
+
 			putchar(ch);
 			count++;
-		} else {
-			/* Caractère ordinaire, l'imprimer */
-			/* Utilisation de putchar pour imprimer un seul caractère à la fois */
+		}
+		else
+		{
+			/* Ordinary character, print it */
 			putchar(*format);
 			count++;
 		}
 
-		format++; /* Passer au caractère suivant dans la chaîne de format */
+		format++; /* Move to the next character in the format string */
 	}
 
-	va_end(args); /* Nettoyer la liste d'arguments variable */
+	va_end(args); /* Clean up the variable argument list */
 
-	return count;
+	return (count);
 }
 
-int main(void) {
-	/* Utilisation de _printf avec putchar pour l'impression */
-	_printf("Hello, %c! This is a %d example.\n", 'W', 42);
-
-	return 0;
+/**
+ * main - Entry point of the program.
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+	return (0);
 }
 
