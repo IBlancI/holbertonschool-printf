@@ -49,9 +49,15 @@ int _printf1(const char *format, ...)
 		{
 			format++;
 			if (*format == 'c')
-				print_char(va_arg(args, int), &count);
+			{
+				char c = va_arg(args, int);
+				putchar(c);
+				count++;
+			}
 			else if (*format == 's')
+			{
 				print_str(va_arg(args, char *), &count);
+			}
 			else if (*format == '%')
 			{
 				putchar('%');
