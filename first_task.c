@@ -36,7 +36,7 @@ static void print_str(char *s, int *count)
  * return : Le nombre de caractères imprimés (hors octet nul).
  */
 
-int _printf(const char *format, ...)
+int _printf1(const char *format, ...)
 {
 	va_list args;
 	int count = 0;
@@ -76,15 +76,3 @@ int _printf(const char *format, ...)
 
 	return (count);
 }
-
-/**
- * main - Point d'entrée du programme.
- *
- * return : Toujours (0).
- */
-
-int main(void)
-{
-	return (0);
-}
-

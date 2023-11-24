@@ -7,7 +7,7 @@
  *
  * Return: The number of characters printed (excluding the null byte).
  */
-int _printf(const char *format, ...)
+int _printf2(const char *format, ...)
 {
 	int count = 0; /* Variable to track the number of printed characters */
 	va_list args; /* Declaration of the variable argument list */
@@ -48,14 +48,3 @@ int _printf(const char *format, ...)
 
 	return (count);
 }
-
-/**
- * main - Entry point of the program.
- *
- * Return: Always 0.
- */
-int main(void)
-{
-	return (0);
-}
-

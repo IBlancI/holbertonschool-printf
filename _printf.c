@@ -39,7 +39,7 @@ int _printf(const char *format, ...)
 			/* On appelle donc la fonction handle_format qui va gérer le specifier*/
 			/* On lui passe en paramètre le format specifier et arguments_list*/
 			/* On incrémente strFormat_leng du nombre de char retourné par la func*/
-			strFormat_leng += handle_format(format[index], arguments_list);
+		/*	strFormat_leng += handle_format(format[index], arguments_list); */
 		}
 	}
 	/* Clean up : on termine notre liste d'arguments*/
